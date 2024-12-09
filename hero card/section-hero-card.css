@@ -1,0 +1,81 @@
+@media screen and (max-width: 749.9999px) {
+  .three-cards-section {
+    margin-top: 0
+  }
+}
+
+.three-cards-section {
+  padding: 50px 0;
+  background-color: transparent;
+  postion: relative;
+  text-align: center;
+  margin-top: -200px;
+  font-family: "Poppins";
+  z-index: 1;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: transparent;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: -80px;
+  z-index: 1;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 80px;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgb(243 243 243), #c3dfb0);
+}
+
+.card-details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #283618;
+  letter-spacing: 0rem;
+}
+
+.card-details .price {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #c3dfb0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price .original-price {
+  text-decoration: line-through;
+  color: #a4b764;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.price .discount-price {
+  color: #a4b764;
+  font-weight: bold;
+}
