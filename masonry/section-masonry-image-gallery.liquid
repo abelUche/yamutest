@@ -1,0 +1,169 @@
+{{ 'section-masonry-gallery.css' | asset_url | stylesheet_tag }}
+
+
+{% schema %}
+{
+  "name": "Mansonry Image Gallery",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Share your setup with</p>"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>#Funitura_Funiture</p>"
+    },
+    {
+      "type": "select",
+      "id": "subheading_alignment",
+      "label": "Subheading Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "paragraph",
+      "content": "Upload up to 9 images to create a dynamic mansonry gallery"
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Center Image (Spans Both Rows)"
+    },
+    {
+      "type": "url",
+      "id": "center_image_url",
+      "label": "Center Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_left_image",
+      "label": "Top Left Image"
+    },
+    {
+      "type": "url",
+      "id": "top_left_image_url",
+      "label": "Top Left Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_left2_image",
+      "label": "Top Left Second Image"
+    },
+    {
+      "type": "url",
+      "id": "top_left2_image_url",
+      "label": "Top Left Second Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_right2_image",
+      "label": "Top Right Second Image"
+    },
+    {
+      "type": "url",
+      "id": "top_right2_image_url",
+      "label": "Top Right Second Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_left_image",
+      "label": "Bottom Left Image"
+    },
+    {
+      "type": "url",
+      "id": "bottom_left_image_url",
+      "label": "Bottom Left Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_left2_image",
+      "label": "Bottom Left Second Image"
+    },
+    {
+      "type": "url",
+      "id": "bottom_left2_image_url",
+      "label": "Bottom Left Second Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_right2_image",
+      "label": "Bottom Right Second Image"
+    },
+    {
+      "type": "url",
+      "id": "bottom_right2_image_url",
+      "label": "Bottom Right Second Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "top_right_image",
+      "label": "Top Right Image"
+    },
+    {
+      "type": "url",
+      "id": "top_right_image_url",
+      "label": "Top Right Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_right_image",
+      "label": "Bottom Right Image"
+    },
+    {
+      "type": "url",
+      "id": "bottom_right_image_url",
+      "label": "Bottom Right Image URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mansonry Image Gallery",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+{% render 'mansonry-gallery', 
+  heading: section.settings.heading,
+  subheading: section.settings.subheading,
+  heading_alignment: section.settings.heading_alignment,
+  subheading_alignment: section.settings.subheading_alignment,
+  center_image: section.settings.center_image,
+  center_image_url: section.settings.center_image_url,
+  top_left_image: section.settings.top_left_image,
+  top_left_image_url: section.settings.top_left_image_url,
+  top_left2_image: section.settings.top_left2_image,
+  top_left2_image_url: section.settings.top_left2_image_url,
+  top_right2_image: section.settings.top_right2_image,
+  top_right2_image_url: section.settings.top_right2_image_url,
+  bottom_left_image: section.settings.bottom_left_image,
+  bottom_left_image_url: section.settings.bottom_left_image_url,
+  bottom_left2_image: section.settings.bottom_left2_image,
+  bottom_left2_image_url: section.settings.bottom_left2_image_url,
+  bottom_right2_image: section.settings.bottom_right2_image,
+  bottom_right2_image_url: section.settings.bottom_right2_image_url,
+  top_right_image: section.settings.top_right_image,
+  top_right_image_url: section.settings.top_right_image_url,
+  bottom_right_image: section.settings.bottom_right_image,
+  bottom_right_image_url: section.settings.bottom_right_image_url
+%}
