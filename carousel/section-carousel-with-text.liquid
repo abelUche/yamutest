@@ -1,0 +1,114 @@
+{{ 'section-carousel-with-text.css' | asset_url | stylesheet_tag }}
+
+{% if template == 'index' %}
+  <script src="{{ 'section-carousel-with-text.js' | asset_url }}" defer></script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Carousel with Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Carousel Heading"
+    },
+    {
+      "type": "text",
+      "id": "paragraph",
+      "label": "Paragraph",
+      "default": "Describe the carousel here."
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_1",
+      "label": "Carousel Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_2",
+      "label": "Carousel Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_3",
+      "label": "Carousel Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_4",
+      "label": "Carousel Image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "carousel_image_5",
+      "label": "Carousel Image 5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Carousel Section",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="carousel-section">
+  <div class="carousel-container">
+    <div class="carousel-row">
+      <!-- Text Content Column -->
+      <div class="carousel-content">
+        <h2 class="carousel-heading">
+          {{ section.settings.heading }}
+        </h2>
+        <p class="carousel-paragraph">
+          {{ section.settings.paragraph }}
+        </p>
+        {% if section.settings.button_text and section.settings.button_url %}
+        <a href="{{ section.settings.button_url }}" class="carousel-btn">
+          {{ section.settings.button_text }}
+        </a>
+        {% endif %}
+      </div>
+
+      <!-- Carousel Column -->
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel-{{ section.id }}">
+          {% for i in (1..5) %}
+          {% assign image_key = "carousel_image_" | append: i %}
+          {% assign image = section.settings[image_key] %}
+          {% if image %}
+          <div class="carousel-slide {% if forloop.first %}full-height{% else %}reduced-height{% endif %}">
+            <img src="{{ image | image_url: width: 800 }}" alt="Carousel Image {{ forloop.index }}" loading="lazy">
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- Carousel Navigation -->
+        <button class="carousel-nav prev" aria-label="Previous slide">❮</button>
+        <button class="carousel-nav next" aria-label="Next slide">❯</button>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          {% for i in (1..5) %}
+          <button class="indicator {% if forloop.first %}active{% endif %}" data-slide-to="{{ forloop.index }}" aria-label="Go to slide {{ forloop.index }}"></button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
