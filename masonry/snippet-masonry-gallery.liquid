@@ -1,0 +1,83 @@
+<div class="page-width">
+  {% if section.settings.heading %}
+    <h2 class="mansonry-header" style="text-align: {{ section.settings.heading_alignment }};">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  {% if section.settings.subheading %}
+    <h3 class="mansonry-subheader" style="text-align: {{ section.settings.subheading_alignment }};">{{ section.settings.subheading }}</h3>
+  {% endif %}
+
+  <div class="mansonry-gallery">
+  {% if center_image %}
+    <div class="center-image">
+      <a href="{{ center_image_url }}">
+        {{ center_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if top_left_image %}
+    <div class="top-left">
+      <a href="{{ top_left_image_url }}">
+        {{ top_left_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if top_left2_image %}
+    <div class="top-left-2">
+      <a href="{{ top_left2_image_url }}">
+        {{ top_left2_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if top_right2_image %}
+    <div class="top-right-2">
+      <a href="{{ top_right2_image_url }}">
+        {{ top_right2_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if bottom_left_image %}
+    <div class="bottom-left">
+      <a href="{{ bottom_left_image_url }}">
+        {{ bottom_left_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if bottom_left2_image %}
+    <div class="bottom-left-2">
+      <a href="{{ bottom_left2_image_url }}">
+        {{ bottom_left2_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if bottom_right2_image %}
+    <div class="bottom-right-2">
+      <a href="{{ bottom_right2_image_url }}">
+        {{ bottom_right2_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if top_right_image %}
+    <div class="top-right">
+      <a href="{{ top_right_image_url }}">
+        {{ top_right_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% if bottom_right_image %}
+    <div class="bottom-right">
+      <a href="{{ bottom_right_image_url }}">
+        {{ bottom_right_image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+      </a>
+    </div>
+  {% endif %}
+</div>  
+</div>
